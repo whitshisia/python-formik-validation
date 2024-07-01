@@ -6,7 +6,8 @@ export const SignupForm = () => {
   const [refreshPage, setRefreshPage] = useState(false);
   // Pass the useFormik() hook initial form values and a submit function that will
   // be called when the form is submitted
-
+  
+   
   useEffect(() => {
     console.log("FETCH! ");
     fetch("/customers")
@@ -44,7 +45,7 @@ export const SignupForm = () => {
         },
         body: JSON.stringify(values, null, 2),
       }).then((res) => {
-        if (res.status == 200) {
+        if (res.status === 200) {
           setRefreshPage(!refreshPage);
         }
       });
